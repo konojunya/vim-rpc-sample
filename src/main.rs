@@ -29,9 +29,8 @@ fn main() {
                     .map(|v| v.as_i64().unwrap())
                     .collect::<Vec<i64>>();
                 let sum = nums.iter().sum::<i64>();
-                print!("{}", sum);
-                // nvim.command(&format!("echo \"Result: {}\"", sum.to_string()))
-                //     .unwrap();
+                nvim.command(&format!("echo \"Result: {}\"", sum.to_string()))
+                    .unwrap();
             }
 
             Messages::Unknown(event) => {

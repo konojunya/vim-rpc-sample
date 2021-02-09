@@ -1,0 +1,45 @@
+{
+  "name": "vim-rpc-sample",
+  "version": "1.0.0",
+  "description": "[CODE SANDBOX] vimのrpcを使ってNode.jsと通信する",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint 'src/**/*.ts'",
+    "test": "jest",
+    "postinstall": "yarn run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/konojunya/vim-rpc-sample.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/konojunya/vim-rpc-sample/issues"
+  },
+  "homepage": "https://github.com/konojunya/vim-rpc-sample#readme",
+  "dependencies": {
+    "neovim": "^4.9.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.25",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "eslint": "^7.19.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.1",
+    "ts-loader": "^8.0.16",
+    "typescript": "^4.1.3",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0"
+  }
+}

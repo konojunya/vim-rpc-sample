@@ -1,8 +1,6 @@
 extern crate neovim_lib;
 
 use neovim_lib::{Neovim, NeovimApi, Session};
-use std::fs::File;
-use std::io::Write;
 
 enum Messages {
     Add,
@@ -32,9 +30,6 @@ fn main() {
                     .collect::<Vec<i64>>();
                 let sum = nums.iter().sum::<i64>();
                 print!("{}", sum);
-
-                let mut file = File::create("test.txt").unwrap();
-                file.write_all(b"hoge").unwrap();
                 // nvim.command(&format!("echo \"Result: {}\"", sum.to_string()))
                 //     .unwrap();
             }

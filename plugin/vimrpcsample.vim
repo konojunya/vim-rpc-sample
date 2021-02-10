@@ -13,6 +13,8 @@ function! s:init()
   elseif -1 == id
     echoerr 'vimrpcsampleJobId: rpc process is not executable'
   else
+    let s:vimrpcsampleJobId = id
+
     command! -nargs=+ VRSAdd :call s:add(<f-args>)
   endif
 endfunction

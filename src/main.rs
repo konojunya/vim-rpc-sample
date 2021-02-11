@@ -4,6 +4,7 @@ use neovim_lib::{Neovim, NeovimApi, Session};
 
 enum Messages {
     Add,
+    OnSave,
     Unknown(String),
 }
 
@@ -11,6 +12,7 @@ impl From<String> for Messages {
     fn from(event: String) -> Self {
         match &event[..] {
             "add" => Messages::Add,
+            "save" => Messages::OnSave,
             _ => Messages::Unknown(event),
         }
     }
@@ -31,6 +33,16 @@ fn main() {
                 let sum = nums.iter().sum::<i64>();
                 nvim.command(&format!("echo \"Result: {}\"", sum.to_string()))
                     .unwrap();
+            }
+
+            Messages::OnSave => {
+                let args = values
+                    .iter()
+                    .map(|v| v.as_str().unwrap())
+                    .collect::<Vec<&str>>()
+                    .join("");
+
+                nvim.command(&format!("echo \"{}\"", args)).unwrap();
             }
 
             Messages::Unknown(event) => {
